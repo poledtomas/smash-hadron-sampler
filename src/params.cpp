@@ -32,9 +32,9 @@ void readParams(char* filename)
 	 getline(fin, line) ;
 	 istringstream sline (line) ;
 	 sline >> parName >> parValue ;
-	 if     (strcmp(parName,"surface")==0) strcpy(sSurface, parValue) ;
-	 else if(strcmp(parName,"spectra_dir")==0) strcpy(sSpectraDir, parValue) ;
-	 else if(strcmp(parName,"Nbins")==0) NBINS = atoi(parValue) ;
+	 //if     (strcmp(parName,"surface")==0) strcpy(sSurface, parValue) ;
+	 //else if(strcmp(parName,"spectra_dir")==0) strcpy(sSpectraDir, parValue) ;
+	 if(strcmp(parName,"Nbins")==0) NBINS = atoi(parValue) ;
 	 else if(strcmp(parName,"q_max")==0) QMAX = atof(parValue) ;
 	 else if(strcmp(parName,"number_of_events")==0) NEVENTS = atoi(parValue) ;
 	 else if(strcmp(parName,"rescatter")==0) rescatter = atoi(parValue) ;
