@@ -4,10 +4,13 @@ project(vHLLE_SMASH_particle_sampler)
 # Tell cmake where to find modules
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
-
+set(CXX_SMASH_STANDARD "11")
+if(NOT "${CMAKE_CXX_STANDARD}")
+    set(CMAKE_CXX_STANDARD ${CXX_SMASH_STANDARD})
+endif()
 # Set the relevant generic compiler flags (optimisation + warnings)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -W -Wall -Wextra -Wmissing-declarations -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wundef -Wcast-align -Wformat=2 -Wold-style-cast -Werror=switch -std=c++11 -mfpmath=sse")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -W -Wall -Wextra -Wmissing-declarations -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wundef -Wcast-align -Wformat=2 -Wold-style-cast -Werror=switch -std=c++${CMAKE_CXX_STANDARD} -mfpmath=sse")
 message(STATUS "CXX_FLAGS = " ${CMAKE_CXX_FLAGS})
 
 # Collect all the cpp files
